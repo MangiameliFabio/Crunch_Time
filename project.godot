@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Node2D",
+"class": "Monster",
+"language": "GDScript",
+"path": "res://Monster.gd"
+}, {
 "base": "KinematicBody2D",
 "class": "Player",
 "language": "GDScript",
@@ -25,6 +30,7 @@ _global_script_classes=[ {
 "path": "res://StateMachines/Player/Player_State_Machine.gd"
 } ]
 _global_script_class_icons={
+"Monster": "",
 "Player": "",
 "PlayerBaseState": "",
 "PlayerStateMachine": ""
@@ -35,6 +41,10 @@ _global_script_class_icons={
 config/name="Crunch_Time"
 run/main_scene="res://Scene/Main.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+WorldManager="*res://Scripts/WorldManager.gd"
 
 [editor_plugins]
 

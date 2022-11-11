@@ -28,8 +28,6 @@ func _ready() -> void:
 #Handle user inputs
 func _unhandled_input(event: InputEvent) -> void:
 	state.handle_input(event)
-	if event.is_action_just_pressed():
-		emit_signal("interaction")
 
 
 func _process(delta: float) -> void:

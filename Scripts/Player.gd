@@ -9,4 +9,3 @@ export var jump_strength := 10
 var velocity := Vector2.ZERO
 
 var gravity_direction := Vector2.UP
-
