@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Test_Order_PC.png-6f3c33e97441270c896d85bca0681992.stex"
+path="res://.import/CoffeeMachineTable_Ready.png-25316cd09b6cf996ab1e8338d8967a5f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Test_Order_PC.png"
-dest_files=[ "res://.import/Test_Order_PC.png-6f3c33e97441270c896d85bca0681992.stex" ]
+source_file="res://Assets/Sprites/Interactables/CoffeeMachineTable_Ready.png"
+dest_files=[ "res://.import/CoffeeMachineTable_Ready.png-25316cd09b6cf996ab1e8338d8967a5f.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

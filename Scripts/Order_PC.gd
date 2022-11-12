@@ -1,4 +1,4 @@
-extends Interactable
+extends Interactable_Object
 
 onready var crate = get_parent().get_node("Crate")
 
@@ -7,7 +7,7 @@ func interact():
 		return
 	
 	self.working = true
-	$ExclamationMark.visible = false
+	$Interact.visible = false
 	$Cooldown.visible = true
 	print ("Interacted with PC")
 
