@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Area2D",
+"class": "Interactable",
+"language": "GDScript",
+"path": "res://Classes/Interactable_Base.gd"
+}, {
 "base": "Node2D",
 "class": "Monster",
 "language": "GDScript",
@@ -30,6 +35,7 @@ _global_script_classes=[ {
 "path": "res://StateMachines/Player/Player_State_Machine.gd"
 } ]
 _global_script_class_icons={
+"Interactable": "",
 "Monster": "",
 "Player": "",
 "PlayerBaseState": "",
