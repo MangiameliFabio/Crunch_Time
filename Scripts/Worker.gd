@@ -28,10 +28,10 @@ func interact():
 		WorldManager.cola_crate_ammount -= 1
 		
 		# TODO REFACTOR THIS IF THERE IS TIME LEFT
-		if current_need == "Cola":
-			$Sprite_Need_Cola.visible = false
-		elif current_need == "Coffee":
-			$Sprite_Need_Coffee.visible = false
+#		if current_need == "Cola":
+#			$Sprite_Need_Cola.visible = false
+#		elif current_need == "Coffee":
+#			$Sprite_Need_Coffee.visible = false
 		
 		self.current_need = null
 		self.show_need_bubble = false

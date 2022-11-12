@@ -3,16 +3,16 @@
 [node name="Building" type="StaticBody2D"]
 
 [node name="BuildingTexture" type="Polygon2D" parent="."]
-position = Vector2( -117.895, 405.002 )
-scale = Vector2( 3.40789, 2.57143 )
+position = Vector2( -117.895, 652.504 )
+scale = Vector2( 3.40789, 4.14287 )
 color = Color( 0.423529, 0.415686, 0.415686, 1 )
 polygon = PoolVector2Array( 34.5946, -269.5, 34.5946, -157.5, 297.514, -157.5, 297.514, -269.5 )
 
 [node name="FistFloorTexture" type="Polygon2D" parent="."]
-position = Vector2( -117.895, 360 )
-scale = Vector2( 3.40789, 2.28571 )
+position = Vector2( -117.895, 360.003 )
+scale = Vector2( 3.40789, 2.28573 )
 color = Color( 0.776471, 0.886275, 0.968627, 1 )
-polygon = PoolVector2Array( 39.2896, -217, 39.2896, -164.5, 292.819, -164.5, 292.819, -217 )
+polygon = PoolVector2Array( 39.2896, -217, 39.2896, -164.5, 292.819, -164.5, 292.819, -217, 165.964, -217 )
 
 [node name="SecondFloorTexture" type="Polygon2D" parent="."]
 position = Vector2( -112, 224 )
@@ -20,24 +20,36 @@ scale = Vector2( 3.40789, 2.28571 )
 color = Color( 0.776471, 0.886275, 0.968627, 1 )
 polygon = PoolVector2Array( 37.5598, -217, 37.5598, -164.5, 291.089, -164.5, 291.089, -217 )
 
+[node name="ThirdFloorTexture" type="Polygon2D" parent="."]
+position = Vector2( -112, 52.0001 )
+scale = Vector2( 3.40789, 2.10433 )
+color = Color( 0.776471, 0.886275, 0.968627, 1 )
+polygon = PoolVector2Array( 37.5599, -218.597, 37.5599, -161.572, 291.089, -161.572, 291.089, -218.597 )
+
+[node name="FourthFloorTexture" type="Polygon2D" parent="."]
+position = Vector2( -112, -88 )
+scale = Vector2( 3.40789, 2.08098 )
+color = Color( 0.776471, 0.886275, 0.968627, 1 )
+polygon = PoolVector2Array( 37.5599, -219.127, 37.5599, -161.462, 291.089, -161.462, 291.089, -219.127 )
+
 [node name="ElevatorTexture" type="Polygon2D" parent="."]
-position = Vector2( 365.037, 786.13 )
-scale = Vector2( 0.504873, 4.87617 )
+position = Vector2( 368, 1551.51 )
+scale = Vector2( 0.504873, 10.0571 )
 color = Color( 0.192157, 0.2, 0.203922, 1 )
-polygon = PoolVector2Array( 37.5598, -217, 37.5598, -164.5, 291.089, -164.5, 291.089, -217 )
+polygon = PoolVector2Array( 31.6912, -208.36, 31.6912, -155.86, 285.22, -155.86, 285.22, -208.36 )
 
 [node name="CollisionWallLeft" type="CollisionPolygon2D" parent="."]
 position = Vector2( 16, -8 )
 scale = Vector2( 0.8125, 0.8125 )
-polygon = PoolVector2Array( -19.6923, -344.615, -1.90735e-06, -344.615, -1.90735e-06, 9.84616, -19.6923, 9.84616 )
+polygon = PoolVector2Array( -19.6923, -679.385, 0, -679.385, -1.90735e-06, 9.84616, -19.6923, 9.84616 )
 
 [node name="CollisionWallRight" type="CollisionPolygon2D" parent="."]
 position = Vector2( 896, -7.99999 )
 scale = Vector2( 0.8125, 0.8125 )
-polygon = PoolVector2Array( -19.6923, -344.615, -1.90735e-06, -344.615, -1.90735e-06, 9.84616, -19.6923, 9.84616 )
+polygon = PoolVector2Array( -19.6924, -679.385, 0, -679.385, -1.90735e-06, 9.84616, -19.6923, 9.84616 )
 
 [node name="CollisionRoof" type="CollisionPolygon2D" parent="."]
-position = Vector2( 592, -72 )
+position = Vector2( 592, -344 )
 scale = Vector2( 0.8125, 0.8125 )
 polygon = PoolVector2Array( -708.923, -265.846, 354.462, -265.846, 354.462, -246.154, -708.923, -246.154 )
 
@@ -46,12 +58,32 @@ position = Vector2( 592, 200 )
 scale = Vector2( 0.8125, 0.8125 )
 polygon = PoolVector2Array( -708.923, -265.846, 354.462, -265.846, 354.462, -246.154, -708.923, -246.154 )
 
-[node name="CollisionFirstFloorLeft" type="CollisionPolygon2D" parent="."]
+[node name="CollisionSecondFloorLeft" type="CollisionPolygon2D" parent="."]
 position = Vector2( 592, 64 )
 scale = Vector2( 0.8125, 0.8125 )
 polygon = PoolVector2Array( -708.923, -265.846, -256, -265.846, -256, -246.154, -708.923, -246.154 )
 
-[node name="CollisionFirstFloorLeft2" type="CollisionPolygon2D" parent="."]
+[node name="CollisionSecondFloorRight" type="CollisionPolygon2D" parent="."]
 position = Vector2( 1088, 64 )
+scale = Vector2( 0.8125, 0.8125 )
+polygon = PoolVector2Array( -708.923, -265.846, -256, -265.846, -256, -246.154, -708.923, -246.154 )
+
+[node name="CollisionThirdFloorLeft" type="CollisionPolygon2D" parent="."]
+position = Vector2( 592, -72 )
+scale = Vector2( 0.8125, 0.8125 )
+polygon = PoolVector2Array( -708.923, -265.846, -256, -265.846, -256, -246.154, -708.923, -246.154 )
+
+[node name="CollisionThirdFloorRight" type="CollisionPolygon2D" parent="."]
+position = Vector2( 1088, -72 )
+scale = Vector2( 0.8125, 0.8125 )
+polygon = PoolVector2Array( -708.923, -265.846, -256, -265.846, -256, -246.154, -708.923, -246.154 )
+
+[node name="CollisionFourthFloorLeft" type="CollisionPolygon2D" parent="."]
+position = Vector2( 592, -208 )
+scale = Vector2( 0.8125, 0.8125 )
+polygon = PoolVector2Array( -708.923, -265.846, -256, -265.846, -256, -246.154, -708.923, -246.154 )
+
+[node name="CollisionFourthFloorRight" type="CollisionPolygon2D" parent="."]
+position = Vector2( 1088, -208 )
 scale = Vector2( 0.8125, 0.8125 )
 polygon = PoolVector2Array( -708.923, -265.846, -256, -265.846, -256, -246.154, -708.923, -246.154 )
