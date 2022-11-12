@@ -1,38 +1,76 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scene/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Assets/Test_Ground.jpg" type="Texture" id=2]
+[ext_resource path="res://Scene/Building.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scene/Order_PC.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scene/Crate.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scene/Worker.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scripts/GameTimer.gd" type="Script" id=6]
+[ext_resource path="res://Scene/MoneyCounter.gd" type="Script" id=7]
+[ext_resource path="res://Assets/Themes/MainMenu.tres" type="Theme" id=8]
+[ext_resource path="res://Scene/ProgressBar.gd" type="Script" id=9]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 50, 50 )
+[node name="Main" type="Node2D"]
 
-[node name="Main_Oli" type="Node2D"]
+[node name="Building" parent="." instance=ExtResource( 2 )]
+position = Vector2( -448, 128 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2( 505, 581 )
-scale = Vector2( 9.96, 0.36 )
+[node name="Building2" parent="." instance=ExtResource( 2 )]
+position = Vector2( -448, 128 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( -376, 48 )
+z_index = 5
 __meta__ = {
 "_edit_group_": true
 }
+jump_strength = 15
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-shape = SubResource( 1 )
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 0.5, 0.5 )
 
-[node name="Ground_Test" type="Sprite" parent="StaticBody2D"]
-texture = ExtResource( 2 )
+[node name="Worker" parent="." instance=ExtResource( 5 )]
+position = Vector2( -316, -74 )
 
-[node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 296, 494 )
+[node name="Worker2" parent="." instance=ExtResource( 5 )]
+position = Vector2( -184, -74 )
+
+[node name="Worker3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 180, -74 )
+
+[node name="Worker4" parent="." instance=ExtResource( 5 )]
+position = Vector2( 326, -74 )
+
+[node name="Timer" type="Label" parent="."]
+margin_left = 368.0
+margin_top = -192.0
+margin_right = 448.0
+margin_bottom = -176.0
+text = "00:00"
+script = ExtResource( 6 )
+
+[node name="Money" type="Label" parent="."]
+margin_left = 368.0
+margin_top = 144.0
+margin_right = 448.0
+margin_bottom = 160.0
+text = "€ 0"
+align = 2
+script = ExtResource( 7 )
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+margin_left = -448.0
+margin_top = -200.0
+margin_right = -248.0
+margin_bottom = -175.0
+theme = ExtResource( 8 )
+value = 50.0
+script = ExtResource( 9 )
 
 [node name="Order_PC" parent="." instance=ExtResource( 3 )]
-position = Vector2( 99, 531 )
+position = Vector2( -264, 80 )
 
 [node name="Crate" parent="." instance=ExtResource( 4 )]
 visible = false
-position = Vector2( 838, 531 )
-
-[node name="Worker" parent="." instance=ExtResource( 5 )]
-position = Vector2( 638, 512 )
+position = Vector2( 331, 80 )

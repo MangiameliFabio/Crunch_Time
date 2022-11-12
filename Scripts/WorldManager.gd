@@ -31,4 +31,3 @@ func _process(delta):
 
 func choose_random_worker():
 	return worker[rng.randi_range(0, worker.size()-1)]
-	

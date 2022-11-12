@@ -6,8 +6,6 @@ func handle_input(_event: InputEvent) -> void:
 		state_machine.transition_to("Jump")
 
 func update(_delta: float) -> void:
-	#if character.is_on_floor() and Input.get_action_strength("jump"):
-	#	state_machine.transition_to("Jump")
 	pass
 
 func physics_update(_delta: float) -> void:
