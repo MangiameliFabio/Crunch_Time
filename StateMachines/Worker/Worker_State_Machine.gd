@@ -33,10 +33,6 @@ func _process(delta: float) -> void:
 	state.update(delta)
 
 
-func _physics_process(delta: float) -> void:
-	state.physics_update(delta)
-
-
 #Transition to new state.
 #Inputs:
 #	target_state_name -> Insert name of the state node in which should be transitioned into

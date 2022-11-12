@@ -37,7 +37,7 @@ _global_script_classes=[ {
 "base": "Area2D",
 "class": "Worker",
 "language": "GDScript",
-"path": "res://Scene/Worker.gd"
+"path": "res://Scripts/Worker.gd"
 }, {
 "base": "Node",
 "class": "WorkerBaseState",
