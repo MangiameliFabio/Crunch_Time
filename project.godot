@@ -63,8 +63,12 @@ _global_script_class_icons={
 [application]
 
 config/name="Crunch_Time"
-run/main_scene="res://Scene/Fabio_Test_Scene.tscn"
+run/main_scene="res://Scene/Main.tscn"
 config/icon="res://icon.png"
+
+[audio]
+
+default_bus_layout=""
 
 [autoload]
 
@@ -72,7 +76,9 @@ WorldManager="*res://Scripts/WorldManager.gd"
 
 [display]
 
-window/size/resizable=false
+window/size/width=1920
+window/size/height=1080
+window/stretch/mode="viewport"
 window/stretch/aspect="keep_width"
 
 [editor_plugins]

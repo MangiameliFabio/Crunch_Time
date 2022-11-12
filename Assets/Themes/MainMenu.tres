@@ -1,9 +1,14 @@
-[gd_resource type="Theme" load_steps=3 format=2]
+[gd_resource type="Theme" load_steps=5 format=2]
 
 [ext_resource path="res://Assets/Fonts/PixelFontLabel.tres" type="DynamicFont" id=1]
 
 [sub_resource type="StyleBoxFlat" id=2]
 draw_center = false
+
+[sub_resource type="StyleBoxFlat" id=3]
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0, 0, 0, 1 )
 
 [resource]
 Button/colors/font_color = Color( 1, 1, 1, 1 )
@@ -11,3 +16,5 @@ Button/colors/font_color_focus = Color( 0.945098, 0.847059, 0.0588235, 1 )
 Button/colors/font_color_hover = Color( 0.945098, 0.847059, 0.0588235, 1 )
 Button/styles/focus = SubResource( 2 )
 Label/fonts/font = ExtResource( 1 )
+ProgressBar/styles/bg = SubResource( 3 )
+ProgressBar/styles/fg = SubResource( 4 )
