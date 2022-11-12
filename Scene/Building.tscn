@@ -3,8 +3,8 @@
 [node name="Building" type="StaticBody2D"]
 
 [node name="BuildingTexture" type="Polygon2D" parent="."]
-position = Vector2( -117.895, 652.504 )
-scale = Vector2( 3.40789, 4.14287 )
+position = Vector2( -117.895, 787.505 )
+scale = Vector2( 3.40789, 5.00002 )
 color = Color( 0.423529, 0.415686, 0.415686, 1 )
 polygon = PoolVector2Array( 34.5946, -269.5, 34.5946, -157.5, 297.514, -157.5, 297.514, -269.5 )
 
