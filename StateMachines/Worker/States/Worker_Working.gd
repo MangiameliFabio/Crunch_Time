@@ -5,13 +5,14 @@ func handle_input(_event: InputEvent) -> void:
 	pass
 
 
-func update(_delta: float) -> void:
-	if character.sleep_counter <= 0:
-		state_machine.transition_to("Sleeping")
+func update(_delta: float) -> void:		
+	if !(character.current_need == character.NeedType.NO_NEED):
+		if character.sleep_counter <= 0:
+			state_machine.transition_to("Sleeping")
 	
-	character.sleep_counter -= _delta
-	if (character.SLEEP_AFTER_SECONDS / character.sleep_counter) >= 2:
-		character.show_need_bubble = true
+		character.sleep_counter -= _delta
+		if (character.SLEEP_AFTER_SECONDS / character.sleep_counter) >= 2:
+			character.show_need_bubble = true
 
 
 func physics_update(_delta: float) -> void:
