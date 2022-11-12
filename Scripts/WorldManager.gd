@@ -9,8 +9,8 @@ var cola_crate_ammount := 0
 # Count Down to finish game
 func _process(delta):
 	count_down -= delta
-	if count_down <= 0:
-		print("Game Finished")
+	#if count_down <= 0:
+	#	print("Game Finished")
 	
 	if(worker_count > 0):
 		money_ammount += delta * worker_count

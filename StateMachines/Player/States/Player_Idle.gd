@@ -20,6 +20,8 @@ func physics_update(_delta: float) -> void:
 func enter(_msg := {}) -> void:
 	print("Enter Player Idle State")
 	character.velocity.x = 0
+	character.get_node("Sprite_Idle").visible = true
 
 func exit() -> void:
+	character.get_node("Sprite_Idle").visible = false	
 	print("Exit Player Idle State")

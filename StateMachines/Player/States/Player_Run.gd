@@ -15,7 +15,7 @@ func physics_update(_delta: float) -> void:
 		Input.get_action_strength("move_right")
 		- Input.get_action_strength("move_left")
 	)
-	
+
 	character.velocity.x = character.movement_speed * input_direction_x * _delta * 100
 	character.velocity.y += character.gravity * _delta * 100
 	
@@ -27,7 +27,11 @@ func physics_update(_delta: float) -> void:
 
 func enter(_msg := {}) -> void:
 	print("Enter Player Run State")
+	character.get_node("Sprite_Run").visible = true
+	character.animation.play("Run")
 
 
 func exit() -> void:
 	print("Exit Player Run State")
+	character.animation.play("Run")
+	character.get_node("Sprite_Run").visible = false
