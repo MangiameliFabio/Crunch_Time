@@ -14,9 +14,9 @@ func physics_update(_delta: float) -> void:
 
 
 func enter(_msg := {}) -> void:
+	character.clear_need_bubble()
 	character.get_node("Sprite_Sleeping").visible = true
 	character.animation.play("Sleeping")
-	character.show_need_bubble = false
 
 
 func exit() -> void:

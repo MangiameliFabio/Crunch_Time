@@ -31,6 +31,3 @@ func _process(delta):
 
 func choose_random_worker():
 	return worker[rng.randi_range(0, worker.size()-1)]
-#	while true:
-#		if worker[rng.randi_range(0, worker.size()-1)].current_need == NeedType.NO_NEED:
-			
