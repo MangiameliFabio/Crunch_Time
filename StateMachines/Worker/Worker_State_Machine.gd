@@ -7,6 +7,9 @@ export var initial_state := NodePath()
 
 var state
 
+func get_current_state_name():
+	return self.state.name
+
 func _ready() -> void:
 	yield(owner, "ready")
 	

@@ -1,4 +1,4 @@
-class_name Interactable
+class_name Interactable_Object
 extends Area2D
 
 const COOLDOWN_TIME: float = 1.0
@@ -13,7 +13,7 @@ func _ready():
 	
 func _process(delta):
 	if not self.working:
-		$ExclamationMark.visible = self.active
+		$Interact.visible = self.active
 	else:
 		self.timer -= delta
 		if self.timer <= 0:
