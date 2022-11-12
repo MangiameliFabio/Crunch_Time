@@ -10,6 +10,6 @@ func on_pickable_body_entered(body):
 		self.picked_up = true
 		self.visible = false
 		print("picked up!")
-		
-		# TODO add number of bottles to WorldManager
+		WorldManager.cola_crate_ammount = 2
+
 		# TODO change animation sprite?

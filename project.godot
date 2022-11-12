@@ -10,9 +10,14 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Area2D",
-"class": "Interactable",
+"class": "Interactable_NPC",
 "language": "GDScript",
-"path": "res://Classes/Interactable_Base.gd"
+"path": "res://Interfaces/Interactable_NPC_Base.gd"
+}, {
+"base": "Area2D",
+"class": "Interactable_Object",
+"language": "GDScript",
+"path": "res://Interfaces/Interactable_Object_Base.gd"
 }, {
 "base": "Node2D",
 "class": "Monster",
@@ -34,7 +39,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://StateMachines/Player/Player_State_Machine.gd"
 }, {
-"base": "Area2D",
+"base": "Interactable_NPC",
 "class": "Worker",
 "language": "GDScript",
 "path": "res://Scripts/Worker.gd"
@@ -50,7 +55,8 @@ _global_script_classes=[ {
 "path": "res://StateMachines/Worker/Worker_State_Machine.gd"
 } ]
 _global_script_class_icons={
-"Interactable": "",
+"Interactable_NPC": "",
+"Interactable_Object": "",
 "Monster": "",
 "Player": "",
 "PlayerBaseState": "",
@@ -63,7 +69,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Crunch_Time"
-run/main_scene="res://Scene/Fabio_Test_Scene.tscn"
+run/main_scene="res://Scene/Main_Oli.tscn"
 config/icon="res://icon.png"
 
 [autoload]
