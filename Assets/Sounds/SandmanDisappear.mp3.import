@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/SandmanDisappear.mp3-a5d96d8378fa7eb99b2fb392e96873d3.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sounds/SandmanDisappear.mp3"
+dest_files=[ "res://.import/SandmanDisappear.mp3-a5d96d8378fa7eb99b2fb392e96873d3.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
