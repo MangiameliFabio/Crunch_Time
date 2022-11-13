@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scene/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scene/Building.tscn" type="PackedScene" id=2]
@@ -7,12 +7,11 @@
 [ext_resource path="res://Scene/Worker.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scripts/GameTimer.gd" type="Script" id=6]
 [ext_resource path="res://Scripts/MoneyCounter.gd" type="Script" id=7]
-[ext_resource path="res://Elevator.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scene/Elevator.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Assets/Sprites/Textures/StarrySky.png" type="Texture" id=9]
 [ext_resource path="res://Assets/Sprites/Environment/StorageDoor.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Sprites/Textures/ConcreteFloorDark.png" type="Texture" id=11]
 [ext_resource path="res://Scene/Coffee_Machine.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Scripts/Cola_Coffee_Counter.gd" type="Script" id=13]
 
 [node name="Main" type="Node2D"]
 
@@ -68,18 +67,18 @@ position = Vector2( 189, -194 )
 position = Vector2( 336, -194 )
 
 [node name="Timer" type="Label" parent="."]
-margin_left = 368.0
-margin_top = -304.0
-margin_right = 448.0
-margin_bottom = -288.0
+margin_left = 349.0
+margin_top = -309.0
+margin_right = 449.0
+margin_bottom = -289.0
 text = "00:00"
 script = ExtResource( 6 )
 
 [node name="Money" type="Label" parent="."]
-margin_left = 192.0
-margin_top = 288.0
-margin_right = 448.0
-margin_bottom = 304.0
+margin_left = 193.0
+margin_top = 292.0
+margin_right = 449.0
+margin_bottom = 312.0
 text = "€ 0"
 align = 2
 script = ExtResource( 7 )
@@ -94,11 +93,8 @@ position = Vector2( -386, 214 )
 position = Vector2( 299, 214 )
 texture = ExtResource( 10 )
 
-[node name="Crate" parent="." instance=ExtResource( 4 )]
-visible = false
-position = Vector2( 299, 247 )
-
 [node name="Ground" type="Polygon2D" parent="."]
+visible = false
 position = Vector2( 0, 45.1765 )
 scale = Vector2( 1, 0.882353 )
 z_index = -1
@@ -106,6 +102,7 @@ texture = ExtResource( 11 )
 polygon = PoolVector2Array( -640, 248, 640, 248, 640, 384, -640, 384 )
 
 [node name="Background" type="Polygon2D" parent="."]
+visible = false
 z_index = -5
 texture = ExtResource( 9 )
 polygon = PoolVector2Array( -640, -384, -640, 384, -356.301, 384, 640, 384, 640, -384 )
@@ -113,10 +110,6 @@ polygon = PoolVector2Array( -640, -384, -640, 384, -356.301, 384, 640, 384, 640,
 [node name="Elevator" parent="." instance=ExtResource( 8 )]
 position = Vector2( 0, 272 )
 
-[node name="cola_coffe" type="Label" parent="."]
-margin_left = -430.0
-margin_top = 290.0
-margin_right = -390.0
-margin_bottom = 306.0
-text = "0"
-script = ExtResource( 13 )
+[node name="Crate" parent="." instance=ExtResource( 4 )]
+visible = false
+position = Vector2( 244, 256 )

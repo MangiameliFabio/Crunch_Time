@@ -10,6 +10,8 @@ onready var platform = $Platform
 onready var tween = $Tween
 onready var collision_left = $Platform/CollisionWallLeft
 onready var collision_right = $Platform/CollisionWallRight
+onready var key_w = $Platform/Key_W
+onready var key_s = $Platform/Key_S
 
 var current_position = Vector2.ZERO
 var current_floor = 1
@@ -54,12 +56,14 @@ func _on_Area2D_body_entered(body):
 	if body is Player:
 		enable_input = true
 		player_left = false
+		self.show_control_keys()
 
 
 func _on_Area2D_body_exited(body):
 	if body is Player:
 		enable_input = false
 		player_left = true
+		self.hide_control_keys()
 
 func _on_Tween_tween_all_completed():
 	enable_input = true
@@ -67,3 +71,10 @@ func _on_Tween_tween_all_completed():
 	collision_left.disabled = true
 	collision_right.disabled = true
 
+func show_control_keys():
+	self.key_w.visible = true
+	self.key_s.visible = true
+	
+func hide_control_keys():
+	self.key_w.visible = false
+	self.key_s.visible = false

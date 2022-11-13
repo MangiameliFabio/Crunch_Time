@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Assets/Sprites/Environment/Elevator.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Elevator.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Sprites/UI/W-Key.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Sprites/UI/S-Key.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 44, 62 )
@@ -17,6 +19,18 @@ script = ExtResource( 2 )
 speed = 200.0
 
 [node name="Platform" type="KinematicBody2D" parent="."]
+
+[node name="Key_W" type="Sprite" parent="Platform"]
+visible = false
+position = Vector2( 0, -154 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 3 )
+
+[node name="Key_S" type="Sprite" parent="Platform"]
+visible = false
+position = Vector2( 0, 17 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="Platform"]
 position = Vector2( 0, -69.75 )

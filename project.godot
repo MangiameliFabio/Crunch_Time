@@ -103,9 +103,8 @@ WorldManager="*res://Scripts/WorldManager.gd"
 window/size/width=1920
 window/size/height=1080
 window/size/resizable=false
-window/size/fullscreen=true
 window/size/test_width=1024
-window/size/test_height=768
+window/size/test_height=748
 window/stretch/mode="viewport"
 window/stretch/aspect="keep_width"
 

@@ -58,7 +58,7 @@ visible = false
 texture = ExtResource( 5 )
 
 [node name="Interact" type="Sprite" parent="."]
-position = Vector2( -32, -40 )
+position = Vector2( -33, -35 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 2 )
 
