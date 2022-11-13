@@ -40,13 +40,17 @@ func _ready():
 
 func _process(delta):
 	if pending_kill:
-		init_delete()
 		if time_to_kill <= 0:
 			delete()
 		time_to_kill -= delta
 
 func init_delete():
-	pass
+	$KinematicBody2D/DustParicles.visible = false
+	$KinematicBody2D/SpriteFly.visible = false
+	$KinematicBody2D/SpriteAttack.visible = false
+	$SoundDisappear.play()
+	$KinematicBody2D/KillParicles.restart()
+	pending_kill = true
 
 func delete():
 	target.get_node("Sprite_Sandman_Attack").visible = false

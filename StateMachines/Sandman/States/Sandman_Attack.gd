@@ -9,7 +9,8 @@ func update(_delta: float) -> void:
 	if character.sleep_timer <= 0:
 		character.target.attacked_by_sandman = true
 		WorldManager.sandmans.erase(character)
-		character.delete()
+		if(!character.pending_kill):
+			character.init_delete()
 		
 	character.sleep_timer -= _delta
 

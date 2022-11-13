@@ -22,7 +22,7 @@ onready var animation = $AnimationPlayer
 
 func _process(delta):
 	if $RayCast2D.enabled and $RayCast2D.get_collider() and ($RayCast2D.get_collider().owner is Sandman):
-		$RayCast2D.get_collider().owner.delete()
+		$RayCast2D.get_collider().owner.init_delete()
 		$AudioStreamPlayer.play()
 		
 	if Input.get_action_strength("move_left"):
