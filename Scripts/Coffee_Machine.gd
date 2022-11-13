@@ -45,7 +45,7 @@ func pickup_coffee_can(body):
 	self.show_coffee_empty()
 	$Arrow.visible = false
 	WorldManager.coffee_can_ammount = 3
-	WorldManager.cola_crate_ammount = 0
+	WorldManager.cola_crate_ammount = -1
 	self.coffee_ready = false
 	self.animation.stop(true)
 	
