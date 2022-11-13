@@ -36,7 +36,7 @@ func _process(delta):
 		$Sprite_Attack.set_flip_h(false)
 		$RayCast2D.scale.x = 1
 		
-	if WorldManager.cola_crate_ammount == 0 and WorldManager.coffee_can_ammount == 0:
+	if WorldManager.cola_crate_ammount <= 0 and WorldManager.coffee_can_ammount <= 0:
 		change_texture_normal()
 
 func change_texture_normal():
