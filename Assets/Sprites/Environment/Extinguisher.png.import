@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/CoffeeMachineTable_Processing.png-a9d3cee26994406d6440ed022547edf3.stex"
+path="res://.import/Extinguisher.png-a8d1dd1f91a1d3f8ce84125c9be2aa74.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Interactables/CoffeeMachineTable_Processing.png"
-dest_files=[ "res://.import/CoffeeMachineTable_Processing.png-a9d3cee26994406d6440ed022547edf3.stex" ]
+source_file="res://Assets/Sprites/Environment/Extinguisher.png"
+dest_files=[ "res://.import/Extinguisher.png-a8d1dd1f91a1d3f8ce84125c9be2aa74.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

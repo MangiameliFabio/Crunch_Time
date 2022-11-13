@@ -2,8 +2,7 @@ extends PlayerBaseState
 
 
 func handle_input(_event: InputEvent) -> void:
-	if _event.is_action_pressed("jump") and character.is_on_floor():
-		state_machine.transition_to("Jump")
+	pass
 
 func update(_delta: float) -> void:
 	#if character.is_on_floor() and Input.get_action_strength("jump"):
@@ -18,10 +17,8 @@ func physics_update(_delta: float) -> void:
 	character.velocity = character.move_and_slide(character.velocity, character.gravity_direction)
 
 func enter(_msg := {}) -> void:
-	print("Enter Player Idle State")
 	character.velocity.x = 0
 	character.get_node("Sprite_Idle").visible = true
 
 func exit() -> void:
-	character.get_node("Sprite_Idle").visible = false	
-	print("Exit Player Idle State")
+	character.get_node("Sprite_Idle").visible = false

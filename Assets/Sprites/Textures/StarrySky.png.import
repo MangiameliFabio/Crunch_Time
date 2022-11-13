@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/CoffeeMachineTable_Processing.png-a9d3cee26994406d6440ed022547edf3.stex"
+path="res://.import/StarrySky.png-19c41d61c516e37dd0b6111a07fa3f6e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Interactables/CoffeeMachineTable_Processing.png"
-dest_files=[ "res://.import/CoffeeMachineTable_Processing.png-a9d3cee26994406d6440ed022547edf3.stex" ]
+source_file="res://Assets/Sprites/Textures/StarrySky.png"
+dest_files=[ "res://.import/StarrySky.png-19c41d61c516e37dd0b6111a07fa3f6e.stex" ]
 
 [params]
 
@@ -19,7 +19,7 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
-flags/repeat=0
+flags/repeat=1
 flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false

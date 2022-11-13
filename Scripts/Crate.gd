@@ -7,6 +7,7 @@ func _ready():
 
 func on_pickable_body_entered(body):
 	if body is Player and self.visible:
+		body.change_texture_crate()
 		self.picked_up = true
 		self.visible = false
 		print("picked up!")
