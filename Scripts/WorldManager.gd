@@ -83,4 +83,5 @@ func spawn_sandman():
 
 func delete_all_sandmans():
 	for sandman in sandmans:
-		sandman.delete()
+		if is_instance_valid(sandman):
+			sandman.delete()

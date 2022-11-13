@@ -58,7 +58,7 @@ visible = false
 texture = ExtResource( 5 )
 
 [node name="Interact" type="Sprite" parent="."]
-position = Vector2( -33, -35 )
+position = Vector2( -33, -30 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 2 )
 
@@ -80,3 +80,12 @@ texture = ExtResource( 7 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Arrow_Bounce = SubResource( 2 )
 anims/RESET = SubResource( 3 )
+
+[node name="Cooldown_Timer" type="ProgressBar" parent="."]
+visible = false
+margin_left = -38.0
+margin_top = -65.0
+margin_right = 37.0
+margin_bottom = -45.0
+max_value = 3.0
+percent_visible = false

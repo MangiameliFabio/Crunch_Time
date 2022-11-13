@@ -7,6 +7,10 @@ onready var animation = $AnimationPlayer
 func _ready():
 	connect("body_entered", self, "on_pickable_body_entered")
 	connect("body_exited", self, "on_pickable_body_exited")
+	self.progress_bar.max_value = self.COOLDOWN_TIME
+
+func _process(delta):
+	self.progress_bar.value = self.timer
 
 func on_pickable_body_entered(body):
 	if body is Player and self.coffee_ready:
@@ -23,7 +27,7 @@ func interact():
 		return
 	self.working = true
 	$Interact.visible = false
-	$Cooldown.visible = true
+	self.progress_bar.visible = true
 	self.show_coffee_processing()
 	print ("Interacted with Coffe Machine")
 

@@ -1,11 +1,12 @@
 class_name Interactable_Object
 extends Area2D
 
-const COOLDOWN_TIME: float = 1.0
+const COOLDOWN_TIME: float = 3.0
 
 onready var active: bool = false
 onready var timer: float = COOLDOWN_TIME
 onready var working: bool = false
+onready var progress_bar = $Cooldown_Timer
 
 func _ready():
 	connect("body_entered", self, "on_interactable_object_body_entered")
@@ -18,7 +19,7 @@ func _process(delta):
 		self.timer -= delta
 		if self.timer <= 0:
 			self.working = false
-			$Cooldown.visible = false
+			progress_bar.visible = false
 			self.timer = COOLDOWN_TIME
 			self.cooldown_finished()
 

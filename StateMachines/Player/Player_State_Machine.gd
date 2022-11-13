@@ -27,6 +27,8 @@ func _ready() -> void:
 
 #Handle user inputs
 func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("attack") and ((WorldManager.coffee_can_ammount > 0) or (WorldManager.cola_crate_ammount > 0)):
+		transition_to("Attack")
 	state.handle_input(event)
 
 
