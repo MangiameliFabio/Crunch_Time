@@ -5,7 +5,7 @@
 [ext_resource path="res://Assets/Sprites/UI/RedArrow.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 27, 15 )
+extents = Vector2( 13.5, 7.75 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "Arrow_Bounce"
@@ -43,11 +43,12 @@ tracks/0/keys = {
 script = ExtResource( 2 )
 
 [node name="Crate_Sprite" type="Sprite" parent="."]
-scale = Vector2( 2, 2 )
+position = Vector2( 0, -0.75 )
+scale = Vector2( 1, 1.02941 )
 texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 2 )
+position = Vector2( 0, 0.25 )
 shape = SubResource( 1 )
 
 [node name="Arrow" type="Sprite" parent="."]

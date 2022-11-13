@@ -1,17 +1,19 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Scripts/MainMenu.gd" type="Script" id=1]
+[ext_resource path="res://GameOverScreen.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Themes/MainMenu.tres" type="Theme" id=2]
-[ext_resource path="res://Assets/Fonts/TitlePixelFont.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Scripts/Score.gd" type="Script" id=3]
 [ext_resource path="res://Assets/Sprites/Textures/StarrySky.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Fonts/TitlePixelFont.tres" type="DynamicFont" id=5]
 
-[node name="MainMenu" type="Control"]
+[node name="GameOver" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 2.0
 margin_top = 2.0
 margin_right = 2.0
 margin_bottom = 2.0
+rect_pivot_offset = Vector2( 78, 214 )
 theme = ExtResource( 2 )
 script = ExtResource( 1 )
 
@@ -26,53 +28,65 @@ polygon = PoolVector2Array( -2, -2, -2, 1078, 1918, 1078, 1918, -2 )
 
 [node name="Label" type="Label" parent="."]
 anchor_right = 1.0
-margin_left = -2.0
-margin_top = 102.0
-margin_right = -2.0
-margin_bottom = 202.0
-custom_fonts/font = ExtResource( 3 )
-text = "CRUNCH TIME"
+margin_top = 100.0
+margin_bottom = 100.0
+custom_fonts/font = ExtResource( 5 )
+text = "GAME OVER"
 align = 1
+
+[node name="Score" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -186.0
+margin_top = -270.0
+margin_right = 182.0
+margin_bottom = -237.0
+align = 1
+script = ExtResource( 3 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -86.0
-margin_top = -30.0
-margin_right = 86.0
-margin_bottom = 43.0
+margin_left = -70.0
+margin_right = 70.0
+margin_bottom = 74.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 2
 size_flags_vertical = 2
 alignment = 1
 
-[node name="StartButton" type="Button" parent="VBoxContainer"]
-margin_right = 276.0
+[node name="RestartButton" type="Button" parent="VBoxContainer"]
+margin_right = 408.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 0, 80 )
 focus_neighbour_top = NodePath("../QuitButton")
-text = "Start"
+text = "RESTART"
 flat = true
 
-[node name="ControlsButton" type="Button" parent="VBoxContainer"]
+[node name="BackToMenuButton" type="Button" parent="VBoxContainer"]
 margin_top = 84.0
-margin_right = 276.0
+margin_right = 408.0
 margin_bottom = 164.0
 rect_min_size = Vector2( 0, 80 )
-text = "Controls"
+focus_neighbour_top = NodePath("../QuitButton")
+text = "Back To Menu"
 flat = true
 
 [node name="QuitButton" type="Button" parent="VBoxContainer"]
 margin_top = 168.0
-margin_right = 276.0
+margin_right = 408.0
 margin_bottom = 248.0
 rect_min_size = Vector2( 0, 80 )
-focus_neighbour_bottom = NodePath("../StartButton")
+focus_neighbour_bottom = NodePath("../RestartButton")
 text = "Quit"
 flat = true
 
 [connection signal="mouse_entered" from="VBoxContainer" to="." method="_on_VBoxContainer_mouse_entered"]
-[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_StartButton_pressed"]
-[connection signal="pressed" from="VBoxContainer/ControlsButton" to="." method="_on_OptionsButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/RestartButton" to="." method="_on_RestartButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/BackToMenuButton" to="." method="_on_BackToMenuButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_QuitButton_pressed"]
