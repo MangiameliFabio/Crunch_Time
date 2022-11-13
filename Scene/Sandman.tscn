@@ -112,6 +112,7 @@ hframes = 19
 visible = false
 texture = ExtResource( 2 )
 hframes = 19
+frame = 16
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="KinematicBody2D"]
 root_node = NodePath("../SpriteFly")

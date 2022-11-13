@@ -99,6 +99,7 @@ hframes = 21
 visible = false
 texture = ExtResource( 8 )
 hframes = 21
+frame = 20
 
 [node name="PlayerStateMachine" type="Node" parent="."]
 script = ExtResource( 4 )

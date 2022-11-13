@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/slam.mp3-e9f9fdedac5ceafae42bf68416d4c1ef.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sounds/slam.mp3"
+dest_files=[ "res://.import/slam.mp3-e9f9fdedac5ceafae42bf68416d4c1ef.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
