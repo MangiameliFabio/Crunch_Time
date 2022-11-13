@@ -7,8 +7,8 @@
 [ext_resource path="res://StateMachines/Worker/Worker_State_Machine.gd" type="Script" id=5]
 [ext_resource path="res://Scripts/Worker.gd" type="Script" id=6]
 [ext_resource path="res://Assets/Test_Interact.png" type="Texture" id=7]
-[ext_resource path="res://Assets/Test_Need_Cola.png" type="Texture" id=8]
-[ext_resource path="res://Assets/Test_Need_Coffee.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Sprites/UI/Coke_ThinkingBubble.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Sprites/UI/Coffee_ThinkingBubble.png" type="Texture" id=9]
 
 [sub_resource type="Animation" id=2]
 resource_name = "Sleeping"
@@ -79,15 +79,15 @@ position = Vector2( -5, 20 )
 shape = SubResource( 3 )
 
 [node name="Interact" type="Sprite" parent="."]
-position = Vector2( -27, -30 )
+position = Vector2( -43, -29 )
 texture = ExtResource( 7 )
 
 [node name="Sprite_Need_Cola" type="Sprite" parent="."]
 visible = false
-position = Vector2( 32, -39 )
+position = Vector2( 8, -33 )
 texture = ExtResource( 8 )
 
 [node name="Sprite_Need_Coffee" type="Sprite" parent="."]
 visible = false
-position = Vector2( 32, -38 )
+position = Vector2( 8, -33 )
 texture = ExtResource( 9 )

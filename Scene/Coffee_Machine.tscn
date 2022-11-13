@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/Sprites/Interactables/CoffeeMachineTable_Empty.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Test_Interact.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Scripts/Coffee_Machine.gd" type="Script" id=4]
 [ext_resource path="res://Assets/Sprites/Interactables/CoffeeMachineTable_Ready.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Sprites/Interactables/CoffeeMachineTable_Processing.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Sprites/UI/RedArrow.png" type="Texture" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 27.5, 32.5 )
@@ -25,7 +26,7 @@ visible = false
 texture = ExtResource( 5 )
 
 [node name="Interact" type="Sprite" parent="."]
-position = Vector2( -26, -31 )
+position = Vector2( -35, -30 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -37,3 +38,8 @@ shape = SubResource( 1 )
 visible = false
 position = Vector2( 0, -57 )
 texture = ExtResource( 3 )
+
+[node name="Arrow" type="Sprite" parent="."]
+visible = false
+position = Vector2( 0, -39 )
+texture = ExtResource( 7 )

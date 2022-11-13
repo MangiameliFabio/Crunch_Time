@@ -26,6 +26,9 @@ func _process(delta):
 	if Input.get_action_strength("move_right"):
 		$Sprite_Idle.set_flip_h(false)
 		$Sprite_Run.set_flip_h(false)
+		
+	if WorldManager.cola_crate_ammount == 0 and WorldManager.coffee_can_ammount == 0:
+		change_texture_normal()
 
 func change_texture_normal():
 	$Sprite_Idle.set_texture(NormalTextureIdle)
