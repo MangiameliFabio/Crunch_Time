@@ -11,5 +11,5 @@ dest_files=[ "res://.import/CoffeeMachineBrewing_5s.mp3-d25479f03915727ad7db666d
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

@@ -30,6 +30,7 @@ func interact():
 	self.progress_bar.visible = true
 	self.show_coffee_processing()
 	print ("Interacted with Coffe Machine")
+	$AudioStreamPlayer2D.play()
 
 func cooldown_finished():
 	print("Spawn coffee!")
