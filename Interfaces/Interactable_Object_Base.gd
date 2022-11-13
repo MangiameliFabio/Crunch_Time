@@ -1,7 +1,7 @@
 class_name Interactable_Object
 extends Area2D
 
-const COOLDOWN_TIME: float = 5.0
+const COOLDOWN_TIME: float = 3.0
 
 onready var active: bool = false
 onready var timer: float = COOLDOWN_TIME

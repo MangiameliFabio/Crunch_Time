@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/CoffeeMachineBrewing_3s.mp3-59b9b92ae22990db285ce3b1b752f9ec.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sounds/CoffeeMachineBrewing_3s.mp3"
+dest_files=[ "res://.import/CoffeeMachineBrewing_3s.mp3-59b9b92ae22990db285ce3b1b752f9ec.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

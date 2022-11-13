@@ -11,5 +11,5 @@ dest_files=[ "res://.import/SandmanDisappear.mp3-a5d96d8378fa7eb99b2fb392e96873d
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
