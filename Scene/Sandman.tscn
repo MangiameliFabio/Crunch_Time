@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scripts/Sandman.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/Sandman/GraphicsSandmanThrowSand.png" type="Texture" id=2]
@@ -43,6 +43,20 @@ tracks/1/keys = {
 "method": "play_sound_attack"
 } ]
 }
+tracks/2/type = "method"
+tracks/2/path = NodePath("../DustParicles")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.264 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "restart"
+} ]
+}
 
 [sub_resource type="Animation" id=2]
 resource_name = "Fly"
@@ -61,6 +75,15 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16 ]
 }
+
+[sub_resource type="Curve" id=4]
+min_value = 0.5
+max_value = 4.0
+_data = [ Vector2( 0, 0.750569 ), 0.0, 4.09044, 0, 0, Vector2( 0.890566, 4 ), 3.64873, 0.0, 1, 0 ]
+
+[sub_resource type="Gradient" id=5]
+offsets = PoolRealArray( 0.219008, 1 )
+colors = PoolColorArray( 0.951172, 0.921099, 0.743103, 1, 0.935547, 0.906996, 0.643188, 0 )
 
 [node name="Sandman" type="Node"]
 script = ExtResource( 1 )
@@ -104,3 +127,22 @@ script = ExtResource( 6 )
 
 [node name="Attack" type="Node" parent="KinematicBody2D/SandmanStateMachine"]
 script = ExtResource( 4 )
+
+[node name="DustParicles" type="CPUParticles2D" parent="KinematicBody2D"]
+position = Vector2( 24.068, 4.923 )
+emitting = false
+amount = 30
+lifetime = 2.0
+one_shot = true
+speed_scale = 2.2
+explosiveness = 1.0
+direction = Vector2( 0.2, 1 )
+spread = 63.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 60.0
+initial_velocity_random = 0.37
+damping = 79.99
+damping_random = 0.72
+scale_amount_random = 0.73
+scale_amount_curve = SubResource( 4 )
+color_ramp = SubResource( 5 )

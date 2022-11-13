@@ -5,6 +5,7 @@ onready var animation = $KinematicBody2D/AnimationPlayer
 onready var body = $KinematicBody2D as KinematicBody2D
 onready var sprite_fly = $KinematicBody2D/SpriteFly as Sprite
 onready var sprite_attack = $KinematicBody2D/SpriteAttack as Sprite
+onready var throwdustparticle = $KinematicBody2D/DustParicles as CPUParticles2D
 
 var movement_speed = 10.0
 var target
@@ -23,12 +24,17 @@ func _ready():
 		body.position.y = target_position.y - 20
 		body.position.x = -470.0
 		move_direction = 1
+		throwdustparticle.position.x = 24
+		throwdustparticle.direction.x = 0.2
+		
 	else:
 		sprite_fly.set_flip_h(true)
 		sprite_attack.set_flip_h(true)
 		body.position.y = target_position.y - 20
 		body.position.x = 470.0 
 		move_direction = -1
+		throwdustparticle.position.x = -24
+		throwdustparticle.direction.x = -0.2
 
 func _process(delta):
 	pass
