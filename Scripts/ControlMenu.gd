@@ -1,6 +1,6 @@
 extends Control
 
-onready var controls = $VBoxContainer as VBoxContainer
+
 onready var back_button = $BackButton as Button
 
 func _ready():

@@ -14,8 +14,10 @@ var velocity := Vector2.ZERO
 var gravity_direction := Vector2.UP
 var move_direction := 1
 var sleep_timer := 5.0
+var pending_kill := false
+var time_to_kill := 1.0
 
-func _ready():
+func _ready():		
 	$SoundAppear.play()
 	WorldManager.sandmans.append(self)
 	target.current_need = NeedType.SANDMAN
@@ -37,12 +39,16 @@ func _ready():
 		throwdustparticle.direction.x = -0.2
 
 func _process(delta):
+	if pending_kill:
+		init_delete()
+		if time_to_kill <= 0:
+			delete()
+		time_to_kill -= delta
+
+func init_delete():
 	pass
 
 func delete():
 	target.get_node("Sprite_Sandman_Attack").visible = false
 	target.current_need = NeedType.NO_NEED
 	queue_free()
-	
-func play_sound_attack():
-	$SoundAttack.play()

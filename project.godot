@@ -88,7 +88,8 @@ _global_script_class_icons={
 
 config/name="Crunch_Time"
 run/main_scene="res://Scene/MainMenu.tscn"
-config/icon="res://icon.png"
+config/icon="res://Assets/CrunchTimeIcon2.png"
+config/windows_native_icon="res://Assets/CrunchTimeIcon.ico"
 
 [audio]
 
