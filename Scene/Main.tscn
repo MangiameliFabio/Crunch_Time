@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Scene/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scene/Building.tscn" type="PackedScene" id=2]
@@ -12,11 +12,65 @@
 [ext_resource path="res://Assets/Sprites/Environment/StorageDoor.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Sprites/Textures/ConcreteFloorDark.png" type="Texture" id=11]
 [ext_resource path="res://Scene/Coffee_Machine.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Assets/Sprites/Environment/Skyline.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Sprites/Environment/Extinguisher.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Sprites/Environment/OfficeLight.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Sprites/Environment/Trashcan1.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Sprites/Environment/Trashcan3.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Sprites/Environment/Trashcan2.png" type="Texture" id=18]
+
+[sub_resource type="Gradient" id=1]
+interpolation_mode = 2
+offsets = PoolRealArray( 0, 0.102564 )
+colors = PoolColorArray( 0.772549, 0.768627, 0.737255, 0.607843, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
 
 [node name="Main" type="Node2D"]
 
+[node name="Background" type="Polygon2D" parent="."]
+z_index = -100
+color = Color( 0.772549, 0.768627, 0.992157, 1 )
+texture = ExtResource( 9 )
+polygon = PoolVector2Array( -640, -384, -640, 384, -356.301, 384, 640, 384, 640, -384 )
+
+[node name="Background2" type="Polygon2D" parent="."]
+position = Vector2( 0, 268 )
+scale = Vector2( 1, 1.17708 )
+z_index = -100
+texture = SubResource( 2 )
+texture_rotation_degrees = 90.0
+polygon = PoolVector2Array( -640, -384, -640, 384, -356.301, 384, 0, 368.327, 184, 382, 640, 384, 640, -384 )
+
+[node name="Skyline" type="Sprite" parent="."]
+self_modulate = Color( 0.541176, 0.596078, 0.811765, 1 )
+position = Vector2( -1256, -408 )
+scale = Vector2( 2.93363, 2.93363 )
+z_index = -80
+texture = ExtResource( 13 )
+offset = Vector2( 270.352, 178.898 )
+
+[node name="Skyline2" type="Sprite" parent="."]
+position = Vector2( -360, -472 )
+scale = Vector2( 3.22566, 3.22566 )
+z_index = -80
+texture = ExtResource( 13 )
+offset = Vector2( 270.352, 178.898 )
+
+[node name="Ground" type="Polygon2D" parent="."]
+position = Vector2( 0, 55 )
+scale = Vector2( 1, 0.882353 )
+z_index = 1
+color = Color( 0.541176, 0.541176, 0.541176, 1 )
+texture = ExtResource( 11 )
+polygon = PoolVector2Array( -640, 255, 640, 255, 640, 384, -640, 384 )
+
 [node name="Building" parent="." instance=ExtResource( 2 )]
 position = Vector2( -448, 280 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( -379, 208 )
@@ -29,6 +83,23 @@ jump_strength = 15
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 zoom = Vector2( 0.6, 0.6 )
+
+[node name="Trashcan5" type="Sprite" parent="."]
+position = Vector2( -282, -21 )
+texture = ExtResource( 17 )
+
+[node name="Trashcan6" type="Sprite" parent="."]
+position = Vector2( -264, -157 )
+texture = ExtResource( 16 )
+
+[node name="Trashcan7" type="Sprite" parent="."]
+position = Vector2( 233, -157 )
+texture = ExtResource( 17 )
+
+[node name="Extinguisher" type="Sprite" parent="."]
+modulate = Color( 0.658824, 0.658824, 0.658824, 1 )
+position = Vector2( 356, 239 )
+texture = ExtResource( 14 )
 
 [node name="Worker" parent="." instance=ExtResource( 5 )]
 position = Vector2( -318, 78 )
@@ -83,27 +154,15 @@ text = "€ 0"
 align = 2
 script = ExtResource( 7 )
 
+[node name="Coffe_Machine" parent="." instance=ExtResource( 12 )]
+position = Vector2( -386, 214 )
+
 [node name="Order_PC" parent="." instance=ExtResource( 3 )]
 position = Vector2( -260, 214 )
-
-[node name="Coffe_Machine" parent="Order_PC" instance=ExtResource( 12 )]
-position = Vector2( -126, 0 )
 
 [node name="StorageDoor" type="Sprite" parent="."]
 position = Vector2( 299, 214 )
 texture = ExtResource( 10 )
-
-[node name="Ground" type="Polygon2D" parent="."]
-position = Vector2( 0, 45.1765 )
-scale = Vector2( 1, 0.882353 )
-z_index = -1
-texture = ExtResource( 11 )
-polygon = PoolVector2Array( -640, 248, 640, 248, 640, 384, -640, 384 )
-
-[node name="Background" type="Polygon2D" parent="."]
-z_index = -5
-texture = ExtResource( 9 )
-polygon = PoolVector2Array( -640, -384, -640, 384, -356.301, 384, 640, 384, 640, -384 )
 
 [node name="Elevator" parent="." instance=ExtResource( 8 )]
 position = Vector2( 0, 272 )
@@ -111,3 +170,58 @@ position = Vector2( 0, 272 )
 [node name="Crate" parent="." instance=ExtResource( 4 )]
 visible = false
 position = Vector2( 244, 256 )
+
+[node name="OfficeLight" type="Sprite" parent="."]
+position = Vector2( -342, 149 )
+texture = ExtResource( 15 )
+offset = Vector2( -7, 45 )
+
+[node name="OfficeLight9" type="Sprite" parent="."]
+position = Vector2( 161, 149 )
+texture = ExtResource( 15 )
+offset = Vector2( -7, 45 )
+
+[node name="OfficeLight3" type="Sprite" parent="."]
+position = Vector2( 241, -78 )
+texture = ExtResource( 15 )
+
+[node name="OfficeLight4" type="Sprite" parent="."]
+position = Vector2( -254, 58 )
+texture = ExtResource( 15 )
+
+[node name="OfficeLight6" type="Sprite" parent="."]
+position = Vector2( -253, -78 )
+texture = ExtResource( 15 )
+
+[node name="OfficeLight7" type="Sprite" parent="."]
+position = Vector2( -251, -214 )
+texture = ExtResource( 15 )
+
+[node name="OfficeLight8" type="Sprite" parent="."]
+position = Vector2( 242, -214 )
+texture = ExtResource( 15 )
+
+[node name="OfficeLight5" type="Sprite" parent="."]
+position = Vector2( 241, 58 )
+texture = ExtResource( 15 )
+
+[node name="OfficeLight2" type="Sprite" parent="."]
+position = Vector2( -154, 149 )
+texture = ExtResource( 15 )
+offset = Vector2( -7, 45 )
+
+[node name="Trashcan4" type="Sprite" parent="."]
+position = Vector2( 260, -21 )
+texture = ExtResource( 18 )
+
+[node name="Trashcan1" type="Sprite" parent="."]
+position = Vector2( 229, 115 )
+texture = ExtResource( 16 )
+
+[node name="Trashcan3" type="Sprite" parent="."]
+position = Vector2( -252, 115 )
+texture = ExtResource( 17 )
+
+[node name="Trashcan2" type="Sprite" parent="."]
+position = Vector2( -337, 251 )
+texture = ExtResource( 18 )
