@@ -29,10 +29,17 @@ func _process(delta):
 		# change scene to game over screen
 	
 	if(select_worker_timer <= 0):
-		choose_random_worker().receive_new_need(rng.randi_range(1, 2))
+		var random_worker = choose_random_worker()
+		if random_worker:
+			random_worker.receive_new_need(rng.randi_range(1, 2))
+		
 		select_worker_timer = rng.randf_range(1.0,5.0)
 	
 	select_worker_timer -= delta
 
 func choose_random_worker():
-	return worker[rng.randi_range(0, worker.size()-1)]
+	worker.shuffle()
+	for w in worker:
+		if w.current_need == NeedType.NO_NEED:
+			return w
+	return null

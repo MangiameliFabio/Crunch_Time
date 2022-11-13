@@ -75,7 +75,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Crunch_Time"
-run/main_scene="res://Scene/Main_Oli.tscn"
+run/main_scene="res://Scene/Main.tscn"
 config/icon="res://icon.png"
 
 [audio]
