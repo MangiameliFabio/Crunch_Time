@@ -14,8 +14,11 @@ var game_started := false
 var game_stop_delay := 2.0
 var sandman_timer := 0.0
 var sandmans = []
+var audio_player = AudioStreamPlayer2D.new()
 
 func _ready():
+	audio_player.stream = load("res://Assets/Sounds/Office_Music.ogg")
+	audio_player.autoplay = true
 	count_down = max_time
 	rng.randomize()
 	select_worker_timer = rng.randf_range(1.0,5.0)

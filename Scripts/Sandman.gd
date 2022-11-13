@@ -15,6 +15,7 @@ var move_direction := 1
 var sleep_timer := 5.0
 
 func _ready():
+	$SoundAppear.play()
 	WorldManager.sandmans.append(self)
 	target.current_need = NeedType.SANDMAN
 	target_position = target.position
@@ -36,3 +37,6 @@ func delete():
 	target.get_node("Sprite_Sandman_Attack").visible = false
 	target.current_need = NeedType.NO_NEED
 	queue_free()
+	
+func play_sound_attack():
+	$SoundAttack.play()

@@ -34,6 +34,7 @@ func _process(delta):
 		enable_input = false
 	
 func move_up():
+	get_tree().get_root().set_disable_input(true)
 	var duration = distance.length() / speed
 	tween.interpolate_property(platform, "position", current_position, distance * current_floor, duration, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	tween.start()
@@ -41,6 +42,7 @@ func move_up():
 	current_floor += 1
 
 func move_down():
+	get_tree().get_root().set_disable_input(true)
 	var duration = distance.length() / speed
 	current_floor -= 1
 	tween.interpolate_property(platform, "position", current_position, distance * (current_floor - 1), duration, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
@@ -67,7 +69,7 @@ func _on_Area2D_body_exited(body):
 
 func _on_Tween_tween_all_completed():
 	enable_input = true
-	
+	get_tree().get_root().set_disable_input(false)
 	collision_left.disabled = true
 	collision_right.disabled = true
 

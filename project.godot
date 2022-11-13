@@ -97,6 +97,7 @@ default_bus_layout=""
 [autoload]
 
 WorldManager="*res://Scripts/WorldManager.gd"
+Soundtrack="*res://Soundtrack.tscn"
 
 [display]
 
