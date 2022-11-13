@@ -23,3 +23,4 @@ func enter(_msg := {}) -> void:
 
 func exit() -> void:
 	character.get_node("Sprite_Working").visible = false
+	WorldManager.worker.erase(character)

@@ -1,5 +1,5 @@
 extends Node
-const NeedType = preload("res://Scripts/NeedType.gd") 
+#const NeedType = preload("res://Scripts/NeedType.gd")
 
 var count_down := 120.0
 var money_ammount := 0.0
@@ -14,17 +14,22 @@ func _ready():
 	rng.randomize()
 	select_worker_timer = rng.randf_range(1.0,5.0)
 
-# Count Down to finish game
 func _process(delta):
 	count_down -= delta
-	#if count_down <= 0:
-	#	print("Game Finished")
+	
+	if count_down <= 0:
+		print("Game Finished")
+		return
 	
 	if(worker.size() > 0):
 		money_ammount += delta * worker.size()
+	else:
+		return
+		# lose condition here
+		# change scene to game over screen
 	
 	if(select_worker_timer <= 0):
-		choose_random_worker().receive_new_need(NeedType.COLA)
+		choose_random_worker().receive_new_need(rng.randi_range(1, 2))
 		select_worker_timer = rng.randf_range(1.0,5.0)
 	
 	select_worker_timer -= delta

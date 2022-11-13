@@ -8,6 +8,7 @@ var sleep_counter := SLEEP_AFTER_SECONDS
 onready var animation = $AnimationPlayer as AnimationPlayer
 onready var state_machine = $WorkerStateMachine
 onready var current_need = NeedType.NO_NEED
+onready var coll_shape = $CollisionShape2D
 
 func _ready():
 	WorldManager.worker.append(self)
@@ -19,16 +20,22 @@ func _process(delta):
 		$Sprite_Need_Cola.visible = true
 	elif current_need == NeedType.COFFEE and current_state_name == "Working":
 		$Sprite_Need_Coffee.visible = true
-	else:
-		return
 
 func interact():
-	if WorldManager.cola_crate_ammount > 0 and state_machine.get_current_state_name() == "Working" and self.current_need:
-		print("Item given!")
-		WorldManager.cola_crate_ammount -= 1
-		self.clear_need_bubble()
-		self.current_need = NeedType.NO_NEED
-		self.sleep_counter = self.SLEEP_AFTER_SECONDS
+	# TODO REFACTOR THIS SHIT CODE
+	if state_machine.get_current_state_name() == "Working" and self.current_need:
+		if current_need == NeedType.COLA and WorldManager.cola_crate_ammount > 0:
+			WorldManager.cola_crate_ammount -= 1
+			print("Item given!")
+			self.clear_need_bubble()
+			self.current_need = NeedType.NO_NEED
+			self.sleep_counter = self.SLEEP_AFTER_SECONDS
+		elif current_need == NeedType.COFFEE and WorldManager.coffee_can_ammount > 0:
+			WorldManager.coffee_can_ammount -= 1
+			print("Item given!")
+			self.clear_need_bubble()
+			self.current_need = NeedType.NO_NEED
+			self.sleep_counter = self.SLEEP_AFTER_SECONDS
 	else:
 		print("You have no item to give or Worker is sleeping!")
 

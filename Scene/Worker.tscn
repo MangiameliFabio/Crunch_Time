@@ -79,7 +79,7 @@ position = Vector2( -5, 20 )
 shape = SubResource( 3 )
 
 [node name="Interact" type="Sprite" parent="."]
-position = Vector2( -34, -48 )
+position = Vector2( -27, -30 )
 texture = ExtResource( 7 )
 
 [node name="Sprite_Need_Cola" type="Sprite" parent="."]
@@ -89,4 +89,5 @@ texture = ExtResource( 8 )
 
 [node name="Sprite_Need_Coffee" type="Sprite" parent="."]
 visible = false
+position = Vector2( 32, -38 )
 texture = ExtResource( 9 )

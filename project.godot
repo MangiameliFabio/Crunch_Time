@@ -24,6 +24,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Monster.gd"
 }, {
+"base": "Reference",
+"class": "NeedType",
+"language": "GDScript",
+"path": "res://Scripts/NeedType.gd"
+}, {
 "base": "KinematicBody2D",
 "class": "Player",
 "language": "GDScript",
@@ -58,6 +63,7 @@ _global_script_class_icons={
 "Interactable_NPC": "",
 "Interactable_Object": "",
 "Monster": "",
+"NeedType": "",
 "Player": "",
 "PlayerBaseState": "",
 "PlayerStateMachine": "",
@@ -69,7 +75,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Crunch_Time"
-run/main_scene="res://Scene/Main.tscn"
+run/main_scene="res://Scene/Main_Oli.tscn"
 config/icon="res://icon.png"
 
 [audio]
