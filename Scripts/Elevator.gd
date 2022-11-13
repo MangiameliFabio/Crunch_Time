@@ -33,7 +33,7 @@ func _process(delta):
 	
 func move_up():
 	var duration = distance.length() / speed
-	tween.interpolate_property(self, "follow", current_position, distance * current_floor, duration, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+	tween.interpolate_property(platform, "position", current_position, distance * current_floor, duration, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	tween.start()
 	current_position = distance * current_floor
 	current_floor += 1
@@ -41,13 +41,13 @@ func move_up():
 func move_down():
 	var duration = distance.length() / speed
 	current_floor -= 1
-	tween.interpolate_property(self, "follow", current_position, distance * (current_floor - 1), duration, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+	tween.interpolate_property(platform, "position", current_position, distance * (current_floor - 1), duration, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	tween.start()
 	current_position = distance * (current_floor - 1)
 	
 
-func _physics_process(delta):
-	platform.position = platform.position.linear_interpolate(follow, 0.075)
+#func _physics_process(delta):
+#	platform.position = platform.position.linear_interpolate(follow, 0.075)
 
 
 func _on_Area2D_body_entered(body):
@@ -61,9 +61,9 @@ func _on_Area2D_body_exited(body):
 		enable_input = false
 		player_left = true
 
-
-func _on_Tween_tween_completed(object, key):
+func _on_Tween_tween_all_completed():
 	enable_input = true
 	
 	collision_left.disabled = true
 	collision_right.disabled = true
+

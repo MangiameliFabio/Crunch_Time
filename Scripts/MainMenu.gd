@@ -18,14 +18,7 @@ func disable_focus():
 func enable_focus():
 	start_button.set_focus_mode(FOCUS_ALL)
 	controls_button.set_focus_mode(FOCUS_ALL)
-	quit_button.set_focus_mode(FOCUS_ALL)	
-
-func _on_StartButton_pressed():
-	get_tree().change_scene("res://Scene/Main.tscn")
-
-
-func _on_OptionsButton_pressed():
-	pass # Replace with function body.
+	quit_button.set_focus_mode(FOCUS_ALL)
 
 
 func _on_QuitButton_pressed():
@@ -34,3 +27,8 @@ func _on_QuitButton_pressed():
 
 func _on_VBoxContainer_mouse_entered():
 	disable_focus()
+
+
+func _on_StartButton_pressed():
+	get_tree().change_scene("res://Scene/Main.tscn")
+	WorldManager.game_started = true

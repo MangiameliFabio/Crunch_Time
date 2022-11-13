@@ -1,0 +1,80 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Scripts/Sandman.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Sprites/Sandman/GraphicsSandmanThrowSand.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Sprites/Sandman/GraphicsSandmanFly.png" type="Texture" id=3]
+[ext_resource path="res://StateMachines/Sandman/States/Sandman_Attack.gd" type="Script" id=4]
+[ext_resource path="res://StateMachines/Sandman/Sandman_State_Machine.gd" type="Script" id=5]
+[ext_resource path="res://StateMachines/Sandman/States/Sandman_Fly.gd" type="Script" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+[sub_resource type="Animation" id=3]
+resource_name = "Attack"
+length = 0.561
+loop = true
+step = 0.033
+tracks/0/type = "value"
+tracks/0/path = NodePath("../SpriteAttack:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.033, 0.066, 0.099, 0.132, 0.165, 0.198, 0.231, 0.264, 0.297, 0.33, 0.363, 0.396, 0.429, 0.462, 0.495, 0.528 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16 ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "Fly"
+length = 0.561
+loop = true
+step = 0.033
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.033, 0.066, 0.099, 0.132, 0.165, 0.198, 0.231, 0.264, 0.297, 0.33, 0.363, 0.396, 0.429, 0.462, 0.495, 0.528 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16 ]
+}
+
+[node name="Sandman" type="Node"]
+script = ExtResource( 1 )
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+z_index = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
+shape = SubResource( 1 )
+
+[node name="SpriteFly" type="Sprite" parent="KinematicBody2D"]
+texture = ExtResource( 3 )
+hframes = 19
+
+[node name="SpriteAttack" type="Sprite" parent="KinematicBody2D"]
+visible = false
+texture = ExtResource( 2 )
+hframes = 19
+frame = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="KinematicBody2D"]
+root_node = NodePath("../SpriteFly")
+anims/Attack = SubResource( 3 )
+anims/Fly = SubResource( 2 )
+
+[node name="SandmanStateMachine" type="Node" parent="KinematicBody2D"]
+script = ExtResource( 5 )
+initial_state = NodePath("Fly")
+
+[node name="Fly" type="Node" parent="KinematicBody2D/SandmanStateMachine"]
+script = ExtResource( 6 )
+
+[node name="Attack" type="Node" parent="KinematicBody2D/SandmanStateMachine"]
+script = ExtResource( 4 )
