@@ -32,3 +32,7 @@ func _on_VBoxContainer_mouse_entered():
 func _on_StartButton_pressed():
 	get_tree().change_scene("res://Scene/Main.tscn")
 	WorldManager.game_started = true
+
+
+func _on_ControlsButton_pressed():
+	get_tree().change_scene("res://Scene/ControlMenu.tscn")

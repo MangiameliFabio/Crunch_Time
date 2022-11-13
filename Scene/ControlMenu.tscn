@@ -1,6 +1,6 @@
 [gd_scene load_steps=29 format=2]
 
-[ext_resource path="res://Scripts/MainMenu.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/ControlMenu.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Themes/MainMenu.tres" type="Theme" id=2]
 [ext_resource path="res://Assets/Fonts/TitlePixelFont.tres" type="DynamicFont" id=3]
 [ext_resource path="res://Assets/Sprites/Textures/StarrySky.png" type="Texture" id=4]
@@ -118,13 +118,14 @@ animations = [ {
 "speed": 30.0
 } ]
 
-[node name="MainMenu" type="Control"]
+[node name="ControlMenu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 2.0
 margin_top = 2.0
 margin_right = 2.0
 margin_bottom = 2.0
+rect_pivot_offset = Vector2( -585, -183 )
 theme = ExtResource( 2 )
 script = ExtResource( 1 )
 
@@ -181,52 +182,48 @@ custom_fonts/font = ExtResource( 3 )
 text = "CRUNCH TIME"
 align = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -138.0
-margin_top = -124.0
-margin_right = 138.0
-margin_bottom = 124.0
-size_flags_horizontal = 2
-size_flags_vertical = 2
-alignment = 1
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 73.0
+margin_top = 443.0
+margin_right = 562.0
+margin_bottom = 643.0
+text = "Control character: A, D
 
-[node name="StartButton" type="Button" parent="VBoxContainer"]
-margin_right = 276.0
-margin_bottom = 80.0
-rect_min_size = Vector2( 0, 80 )
-focus_neighbour_top = NodePath("../QuitButton")
-text = "Start"
-flat = true
+Control elevator: W, A
 
-[node name="ControlsButton" type="Button" parent="VBoxContainer"]
-margin_top = 84.0
-margin_right = 276.0
-margin_bottom = 164.0
-rect_min_size = Vector2( 0, 80 )
-text = "Controls"
-flat = true
+Punch: Space (only with coffeecan or crate possible)"
 
-[node name="QuitButton" type="Button" parent="VBoxContainer"]
-margin_top = 168.0
-margin_right = 276.0
-margin_bottom = 248.0
-rect_min_size = Vector2( 0, 80 )
-focus_neighbour_bottom = NodePath("../StartButton")
-text = "Quit"
-flat = true
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+margin_left = 783.0
+margin_top = 441.0
+margin_right = 1272.0
+margin_bottom = 641.0
+text = "Brew coffee and order fritz-kola for your colleagues"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="."]
+margin_left = 1414.0
+margin_top = 439.0
+margin_right = 1903.0
+margin_bottom = 639.0
+text = "Keep the sandman away from your colleagues!
+
+The more colleagues are awake the more money you earn"
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 258, 169 )
 scale = Vector2( 4.375, 4.375 )
 frames = SubResource( 20 )
-frame = 8
+frame = 13
 playing = true
 
-[connection signal="mouse_entered" from="VBoxContainer" to="." method="_on_VBoxContainer_mouse_entered"]
-[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_StartButton_pressed"]
-[connection signal="pressed" from="VBoxContainer/ControlsButton" to="." method="_on_ControlsButton_pressed"]
-[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_QuitButton_pressed"]
+[node name="BackButton" type="Button" parent="."]
+margin_left = 685.0
+margin_top = 683.0
+margin_right = 1174.0
+margin_bottom = 763.0
+rect_min_size = Vector2( 0, 80 )
+focus_neighbour_bottom = NodePath("../StartButton")
+text = "Back"
+flat = true
+
+[connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]
