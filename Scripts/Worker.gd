@@ -2,7 +2,7 @@ extends Interactable_NPC
 class_name Worker
 const NeedType = preload("res://Scripts/NeedType.gd")   
 
-const SLEEP_AFTER_SECONDS = 10.0
+const SLEEP_AFTER_SECONDS = 15.0
 
 var sleep_counter := SLEEP_AFTER_SECONDS
 var attacked_by_sandman := false

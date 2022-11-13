@@ -11,8 +11,8 @@ func _process(delta):
 func interact():
 	if self.working:
 		return
-	
 	self.working = true
+	$AudioStreamPlayer2D.play()
 	$Interact.visible = false
 	self.progress_bar.visible = true
 	print ("Interacted with PC")

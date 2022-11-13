@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/cola_bottle.mp3-fabd78b52dcd23e7b96e2a283ca2d08c.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sounds/cola_bottle.mp3"
+dest_files=[ "res://.import/cola_bottle.mp3-fabd78b52dcd23e7b96e2a283ca2d08c.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -9,23 +9,35 @@ var coffee_can_ammount := -1
 var cola_crate_ammount := -1
 var worker = []
 var rng = RandomNumberGenerator.new()
-var select_worker_timer := 0.0
+var select_worker_timer := 5.0
 var game_started := false
 var game_stop_delay := 2.0
-var sandman_timer := 0.0
+var sandman_timer_max := 30.0
+var sandman_timer := 30.0
 var sandmans = []
 var audio_player = AudioStreamPlayer2D.new()
+var rng_max := 10.0
+var current_max_rng = rng_max
+var rng_min := 5.0
+var current_min_rng = rng_min
+var difficulty = 30.0
+var current_difficulty = difficulty
 
 func _ready():
 	audio_player.stream = load("res://Assets/Sounds/Office_Music.ogg")
 	audio_player.autoplay = true
 	count_down = max_time
 	rng.randomize()
-	select_worker_timer = rng.randf_range(1.0,5.0)
-	sandman_timer = rng.randf_range(1.0,5.0)
 
 func _process(delta):
 	if game_started:
+		if rng_min > 0.0:
+			if(current_difficulty <= 0):
+				current_max_rng -= 1.0
+				current_min_rng -= 1.0
+				current_difficulty = difficulty
+			current_difficulty -= delta
+		
 		count_down -= delta
 	
 		if count_down <= 0:
@@ -47,13 +59,13 @@ func _process(delta):
 			if random_worker:
 				random_worker.receive_new_need(rng.randi_range(1, 2))
 		
-			select_worker_timer = rng.randf_range(1.0,5.0)
+			select_worker_timer = rng.randf_range(current_min_rng, current_max_rng)
 	
 		select_worker_timer -= delta
 		
 		if sandman_timer <= 0:
 			spawn_sandman()
-			sandman_timer = rng.randf_range(10.0,20.0)
+			sandman_timer = rng.randf_range(10.0,15.0)
 		else:
 			sandman_timer -= delta
 
@@ -71,8 +83,12 @@ func reset_game():
 	cola_crate_ammount = 0
 	worker = []
 	sandmans = []
-	select_worker_timer = rng.randf_range(1.0,5.0)
+	select_worker_timer = 10.0
 	game_stop_delay = 5
+	current_max_rng = rng_min
+	current_min_rng = rng_min
+	current_difficulty = difficulty
+	sandman_timer = sandman_timer_max
 
 
 func spawn_sandman():

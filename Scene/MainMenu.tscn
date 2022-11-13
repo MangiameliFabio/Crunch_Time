@@ -204,7 +204,7 @@ flat = true
 position = Vector2( 258, 169 )
 scale = Vector2( 4.375, 4.375 )
 frames = SubResource( 20 )
-frame = 14
+frame = 5
 playing = true
 
 [connection signal="mouse_entered" from="VBoxContainer" to="." method="_on_VBoxContainer_mouse_entered"]
