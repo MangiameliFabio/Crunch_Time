@@ -1,9 +1,103 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Scripts/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Themes/MainMenu.tres" type="Theme" id=2]
 [ext_resource path="res://Assets/Fonts/TitlePixelFont.tres" type="DynamicFont" id=3]
 [ext_resource path="res://Assets/Sprites/Textures/StarrySky.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Sprites/Sandman/GraphicsSandmanFly.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Sprites/Environment/Skyline.png" type="Texture" id=6]
+
+[sub_resource type="Gradient" id=1]
+interpolation_mode = 2
+offsets = PoolRealArray( 0, 0.102564 )
+colors = PoolColorArray( 0.772549, 0.768627, 0.737255, 0.607843, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=21]
+gradient = SubResource( 1 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 80, 100 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 5 )
+region = Rect2( 80, 0, 80, 100 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 5 )
+region = Rect2( 160, 0, 80, 100 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 5 )
+region = Rect2( 240, 0, 80, 100 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 5 )
+region = Rect2( 320, 0, 80, 100 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 5 )
+region = Rect2( 400, 0, 80, 100 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 5 )
+region = Rect2( 480, 0, 80, 100 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 5 )
+region = Rect2( 560, 0, 80, 100 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 5 )
+region = Rect2( 640, 0, 80, 100 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 5 )
+region = Rect2( 720, 0, 80, 100 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 5 )
+region = Rect2( 800, 0, 80, 100 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 5 )
+region = Rect2( 880, 0, 80, 100 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 5 )
+region = Rect2( 960, 0, 80, 100 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 5 )
+region = Rect2( 1040, 0, 80, 100 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 5 )
+region = Rect2( 1120, 0, 80, 100 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 5 )
+region = Rect2( 1200, 0, 80, 100 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 5 )
+region = Rect2( 1280, 0, 80, 100 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 5 )
+region = Rect2( 1360, 0, 80, 100 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 5 )
+region = Rect2( 1440, 0, 80, 100 )
+
+[sub_resource type="SpriteFrames" id=20]
+animations = [ {
+"frames": [ SubResource( 22 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ) ],
+"loop": true,
+"name": "default",
+"speed": 30.0
+} ]
 
 [node name="MainMenu" type="Control"]
 anchor_right = 1.0
@@ -23,6 +117,40 @@ anchor_bottom = 1.0
 z_index = -1
 texture = ExtResource( 4 )
 polygon = PoolVector2Array( -2, -2, -2, 1078, 1918, 1078, 1918, -2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Background2" type="Polygon2D" parent="AspectRatioContainer"]
+position = Vector2( 562, 1232 )
+scale = Vector2( 1, 1.74479 )
+z_index = -1
+texture = SubResource( 21 )
+texture_rotation_degrees = 90.0
+polygon = PoolVector2Array( -640, -384, -640, 384, -356.301, 384, 0, 368.327, 184, 382, 1457, 384, 1455, -384 )
+
+[node name="Skyline" type="Sprite" parent="AspectRatioContainer"]
+position = Vector2( 970, 774.094 )
+scale = Vector2( 5.41759, 5.41759 )
+z_index = -1
+texture = ExtResource( 6 )
+
+[node name="Skyline2" type="Sprite" parent="AspectRatioContainer"]
+position = Vector2( 1793, 774.094 )
+scale = Vector2( 5.41759, 5.41759 )
+z_index = -1
+texture = ExtResource( 6 )
+flip_h = true
+
+[node name="Skyline3" type="Sprite" parent="AspectRatioContainer"]
+position = Vector2( 11, 778 )
+scale = Vector2( 5.41759, 5.41759 )
+z_index = -1
+texture = ExtResource( 6 )
+
+[node name="Polygon2D2" type="Polygon2D" parent="AspectRatioContainer"]
+color = Color( 0.0117647, 0.0117647, 0.0352941, 1 )
+polygon = PoolVector2Array( -594, 1078, 1918, 1078, 1918, -2, -2, -2, -2, 1094, -634, 1198, -598, -362, 2415, -392, 2396, 1071, 2398, 1942, -562, 1990 )
 
 [node name="Label" type="Label" parent="."]
 anchor_right = 1.0
@@ -71,6 +199,13 @@ rect_min_size = Vector2( 0, 80 )
 focus_neighbour_bottom = NodePath("../StartButton")
 text = "Quit"
 flat = true
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 258, 169 )
+scale = Vector2( 4.375, 4.375 )
+frames = SubResource( 20 )
+frame = 14
+playing = true
 
 [connection signal="mouse_entered" from="VBoxContainer" to="." method="_on_VBoxContainer_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_StartButton_pressed"]
