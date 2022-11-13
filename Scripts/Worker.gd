@@ -6,6 +6,7 @@ const SLEEP_AFTER_SECONDS = 10.0
 
 var sleep_counter := SLEEP_AFTER_SECONDS
 var attacked_by_sandman := false
+var yawn_played := false
 
 onready var animation = $AnimationPlayer as AnimationPlayer
 onready var state_machine = $WorkerStateMachine
@@ -19,7 +20,10 @@ func _ready():
 func _process(delta):
 	# TODO REFACTOR THIS IF THERE IS TIME LEFT
 	var current_state_name = state_machine.get_current_state_name()
-	if(sleep_counter < (SLEEP_AFTER_SECONDS / 100 * 20)):
+	if(sleep_counter < (SLEEP_AFTER_SECONDS / 100 * 30)):
+		if(!yawn_played):
+			$Yawn.play()
+			yawn_played = true
 		$Sprite_Important.visible = true
 	if current_need == NeedType.COLA and current_state_name == "Working":
 		$Sprite_Need_Cola.visible = true
@@ -59,3 +63,6 @@ func clear_need_bubble():
 	self.current_need = NeedType.NO_NEED
 	self.sleep_counter = self.SLEEP_AFTER_SECONDS
 	self.coll_shape.disabled = true
+	
+func play_slam():
+	$Slam.play()
