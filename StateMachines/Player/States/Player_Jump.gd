@@ -23,11 +23,9 @@ func physics_update(_delta: float) -> void:
 
 
 func enter(_msg := {}) -> void:
-	print("Enter Player Jump State")
 	character.get_node("Sprite_Idle").visible = true
 	character.velocity.y -= character.jump_strength * 100
 
 
 func exit() -> void:
-	character.get_node("Sprite_Idle").visible = false	
-	print("Exit Player Jump State")
+	character.get_node("Sprite_Idle").visible = false

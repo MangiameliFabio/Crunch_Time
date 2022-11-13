@@ -10,14 +10,19 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Area2D",
-"class": "Interactable",
+"class": "Interactable_NPC",
 "language": "GDScript",
-"path": "res://Classes/Interactable_Base.gd"
+"path": "res://Interfaces/Interactable_NPC_Base.gd"
 }, {
-"base": "Node2D",
-"class": "Monster",
+"base": "Area2D",
+"class": "Interactable_Object",
 "language": "GDScript",
-"path": "res://Monster.gd"
+"path": "res://Interfaces/Interactable_Object_Base.gd"
+}, {
+"base": "Reference",
+"class": "NeedType",
+"language": "GDScript",
+"path": "res://Scripts/NeedType.gd"
 }, {
 "base": "KinematicBody2D",
 "class": "Player",
@@ -34,7 +39,22 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://StateMachines/Player/Player_State_Machine.gd"
 }, {
-"base": "Area2D",
+"base": "Node",
+"class": "Sandman",
+"language": "GDScript",
+"path": "res://Scripts/Sandman.gd"
+}, {
+"base": "Node",
+"class": "SandmanBaseState",
+"language": "GDScript",
+"path": "res://StateMachines/Sandman/Sandman_Base_State.gd"
+}, {
+"base": "Node",
+"class": "SandmanStateMachine",
+"language": "GDScript",
+"path": "res://StateMachines/Sandman/Sandman_State_Machine.gd"
+}, {
+"base": "Interactable_NPC",
 "class": "Worker",
 "language": "GDScript",
 "path": "res://Scripts/Worker.gd"
@@ -50,11 +70,15 @@ _global_script_classes=[ {
 "path": "res://StateMachines/Worker/Worker_State_Machine.gd"
 } ]
 _global_script_class_icons={
-"Interactable": "",
-"Monster": "",
+"Interactable_NPC": "",
+"Interactable_Object": "",
+"NeedType": "",
 "Player": "",
 "PlayerBaseState": "",
 "PlayerStateMachine": "",
+"Sandman": "",
+"SandmanBaseState": "",
+"SandmanStateMachine": "",
 "Worker": "",
 "WorkerBaseState": "",
 "WorkerStateMachine": ""
@@ -63,7 +87,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Crunch_Time"
-run/main_scene="res://Scene/Main.tscn"
+run/main_scene="res://Scene/MainMenu.tscn"
 config/icon="res://icon.png"
 
 [audio]
@@ -78,6 +102,9 @@ WorldManager="*res://Scripts/WorldManager.gd"
 
 window/size/width=1920
 window/size/height=1080
+window/size/resizable=false
+window/size/test_width=1024
+window/size/test_height=748
 window/stretch/mode="viewport"
 window/stretch/aspect="keep_width"
 
