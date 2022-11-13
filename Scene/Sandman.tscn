@@ -53,6 +53,7 @@ z_index = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
 shape = SubResource( 1 )
+disabled = true
 
 [node name="SpriteFly" type="Sprite" parent="KinematicBody2D"]
 texture = ExtResource( 3 )

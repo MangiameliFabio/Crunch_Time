@@ -6,7 +6,10 @@ func handle_input(_event: InputEvent) -> void:
 
 
 func update(_delta: float) -> void:
-	pass
+	if character.sleep_timer <= 0:
+		character.target.attacked_by_sandman = true
+		
+	character.sleep_timer -= _delta
 
 
 func physics_update(_delta: float) -> void:
@@ -14,7 +17,7 @@ func physics_update(_delta: float) -> void:
 
 
 func enter(_msg := {}) -> void:
-	character.get_node("SpriteAttack").visible = true
+	character.get_node("KinematicBody2D/SpriteAttack").visible = true
 	character.animation.play("Attack")
 
 func exit() -> void:

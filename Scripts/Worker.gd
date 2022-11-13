@@ -5,6 +5,8 @@ const NeedType = preload("res://Scripts/NeedType.gd")
 const SLEEP_AFTER_SECONDS = 10.0
 
 var sleep_counter := SLEEP_AFTER_SECONDS
+var attacked_by_sandman := false
+
 onready var animation = $AnimationPlayer as AnimationPlayer
 onready var state_machine = $WorkerStateMachine
 onready var current_need = NeedType.NO_NEED

@@ -5,7 +5,9 @@ func handle_input(_event: InputEvent) -> void:
 	pass
 
 
-func update(_delta: float) -> void:		
+func update(_delta: float) -> void:
+	if (character.attacked_by_sandman):
+		state_machine.transition_to("Sleeping")
 	if !(character.current_need == character.NeedType.NO_NEED):
 		if character.sleep_counter <= 0:
 			state_machine.transition_to("Sleeping")

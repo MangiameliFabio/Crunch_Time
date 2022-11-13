@@ -12,12 +12,14 @@ var rng = RandomNumberGenerator.new()
 var select_worker_timer := 0.0
 var game_started := false
 var game_stop_delay := 2.0
+var sandman_timer := 0.0
+var sandmans = []
 
 func _ready():
 	count_down = max_time
 	rng.randomize()
 	select_worker_timer = rng.randf_range(1.0,5.0)
-	spawn_sandman()
+	sandman_timer = rng.randf_range(1.0,5.0)
 
 func _process(delta):
 	if game_started:
@@ -31,6 +33,7 @@ func _process(delta):
 			money_ammount += delta * worker.size()
 		else:
 			if game_stop_delay <= 0:
+				delete_all_sandmans()
 				get_tree().change_scene("res://Scene/GameOverScreen.tscn")
 				game_started = false
 			else:
@@ -44,6 +47,12 @@ func _process(delta):
 			select_worker_timer = rng.randf_range(1.0,5.0)
 	
 		select_worker_timer -= delta
+		
+		if sandman_timer <= 0:
+			spawn_sandman()
+			sandman_timer = rng.randf_range(10.0,20.0)
+		else:
+			sandman_timer -= delta
 
 func choose_random_worker():
 	worker.shuffle()
@@ -58,15 +67,20 @@ func reset_game():
 	coffee_can_ammount = 0
 	cola_crate_ammount = 0
 	worker = []
+	sandmans = []
 	select_worker_timer = rng.randf_range(1.0,5.0)
 	game_stop_delay = 5
 
 
 func spawn_sandman():
-	var scene = load("res://Scene/Sandman.tscn")
-	var sandman = scene.instance() as Sandman
-	#find target
-	worker.shuffle()
-	
-	sandman.target_position
-	get_tree().root.call_deferred("add_child", sandman)
+	if !worker.empty():
+		var scene = load("res://Scene/Sandman.tscn")
+		var sandman = scene.instance() as Sandman
+		#find target
+		worker.shuffle()
+		sandman.target = worker[rng.randi_range(0, worker.size() -1)]
+		get_tree().root.call_deferred("add_child", sandman)
+
+func delete_all_sandmans():
+	for sandman in sandmans:
+		sandman.delete()
