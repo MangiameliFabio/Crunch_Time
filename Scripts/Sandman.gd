@@ -16,6 +16,7 @@ var sleep_timer := 5.0
 
 func _ready():
 	WorldManager.sandmans.append(self)
+	target.current_need = NeedType.SANDMAN
 	target_position = target.position
 	if target_position.x < 0:
 		body.position.y = target_position.y - 20
@@ -32,4 +33,5 @@ func _process(delta):
 	pass
 
 func delete():
+	target.current_need = NeedType.NO_NEED
 	queue_free()

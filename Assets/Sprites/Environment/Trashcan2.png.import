@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/RunCoffeePot.png-4258c5242f0aa98f1f9cefec3f3a1edb.stex"
+path="res://.import/Trashcan2.png-77567d2f3d2a4084f7b40a49fcb8e15e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/MainMenu/RunCoffeePot.png"
-dest_files=[ "res://.import/RunCoffeePot.png-4258c5242f0aa98f1f9cefec3f3a1edb.stex" ]
+source_file="res://Assets/Sprites/Environment/Trashcan2.png"
+dest_files=[ "res://.import/Trashcan2.png-77567d2f3d2a4084f7b40a49fcb8e15e.stex" ]
 
 [params]
 

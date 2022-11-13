@@ -19,12 +19,20 @@ func _ready():
 func _process(delta):
 	# TODO REFACTOR THIS IF THERE IS TIME LEFT
 	var current_state_name = state_machine.get_current_state_name()
+	if(sleep_counter < (SLEEP_AFTER_SECONDS / 100 * 20)):
+		$Sprite_Important.visible = true
 	if current_need == NeedType.COLA and current_state_name == "Working":
 		$Sprite_Need_Cola.visible = true
 		self.coll_shape.disabled = false
 	elif current_need == NeedType.COFFEE and current_state_name == "Working":
 		$Sprite_Need_Coffee.visible = true
 		self.coll_shape.disabled = false
+	elif current_need == NeedType.SANDMAN and current_state_name == "Working":
+		$Sprite_Need_Cola.visible = false
+		$Sprite_Need_Coffee.visible = false
+		$Sprite_Important.visible = false
+		$Sprite_Sandman_Attack.visible = true
+		self.coll_shape.disabled = true
 
 func interact():
 	# TODO REFACTOR THIS SHIT CODE
@@ -46,6 +54,8 @@ func receive_new_need(need):
 func clear_need_bubble():
 	$Sprite_Need_Cola.visible = false
 	$Sprite_Need_Coffee.visible = false
+	$Sprite_Sandman_Attack.visible = false
+	$Sprite_Important.visible = false
 	self.current_need = NeedType.NO_NEED
 	self.sleep_counter = self.SLEEP_AFTER_SECONDS
 	self.coll_shape.disabled = true
