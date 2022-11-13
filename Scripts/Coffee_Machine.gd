@@ -2,6 +2,7 @@ extends Interactable_Object
 
 onready var picked_up = false
 onready var coffee_ready = false
+onready var animation = $AnimationPlayer
 
 func _ready():
 	connect("body_entered", self, "on_pickable_body_entered")
@@ -31,6 +32,7 @@ func cooldown_finished():
 	self.coffee_ready = true
 	self.show_coffee_ready()
 	$Arrow.visible = true
+	self.animation.play("Arrow_Bounce")
 	
 func pickup_coffee_can(body):
 	print("picked up!")
@@ -41,6 +43,7 @@ func pickup_coffee_can(body):
 	WorldManager.coffee_can_ammount = 3
 	WorldManager.cola_crate_ammount = 0
 	self.coffee_ready = false
+	self.animation.stop(true)
 	
 func show_coffee_empty():
 	$Sprite_Coffee_Machine_Empty.visible = true
