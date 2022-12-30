@@ -1,6 +1,8 @@
 # Crunch Time
 ![_KkHNh](https://user-images.githubusercontent.com/92296151/210092622-824af8b6-ac30-4d6e-86a7-8705ea74529d.png)
 
+## Play on [Itch.io](https://zwietabak.itch.io/crunch-time)!
+
 ### Created at the BeansJam' 22 with the theme "We have to stay awake"
 
 You are an intern in a large corporation and you have to keep your colleagues awake as long as possible by supplying them with drinks of their choice.
@@ -30,5 +32,9 @@ Je mehr Mitarbeiter wach sind, desto mehr Geld wird verdient. Ziel ist es die Ko
 
 Sollten alle deine Kollegen einschlafen wirst du gefeuert und das Spiel ist vorbei!
 
-## Play on [Itch.io](https://zwietabak.itch.io/crunch-time)!
+### Authors
+Robin Hohnsbeen - Visuals <br>
+Fabio Mangiameli - Programming <br>
+Oliver Klein - Programming <br>
 
+Special thanks to Viktor Kraus for the great soundtrack!
