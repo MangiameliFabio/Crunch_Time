@@ -134,9 +134,8 @@ polygon = PoolVector2Array( -708.923, -265.846, 354.462, -265.846, 354.462, -246
 
 [node name="CollisionFloor" type="CollisionPolygon2D" parent="."]
 visible = false
-position = Vector2( 592, 200 )
-scale = Vector2( 0.8125, 0.8125 )
-polygon = PoolVector2Array( -708.923, -265.846, 354.462, -265.846, 354.462, -246.154, -708.923, -246.154 )
+position = Vector2( 720, 232 )
+polygon = PoolVector2Array( -720, -248, 176, -248, 176, -232, -720, -232 )
 
 [node name="CollisionSecondFloorLeft" type="CollisionPolygon2D" parent="."]
 visible = false

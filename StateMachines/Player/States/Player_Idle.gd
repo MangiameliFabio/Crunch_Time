@@ -7,6 +7,7 @@ func handle_input(_event: InputEvent) -> void:
 func update(_delta: float) -> void:
 	#if character.is_on_floor() and Input.get_action_strength("jump"):
 	#	state_machine.transition_to("Jump")
+	character.velocity.x = 0
 	
 	if not (Input.get_action_strength("move_right") and Input.get_action_raw_strength("move_left")):
 		if Input.get_action_strength("move_right") or Input.get_action_raw_strength("move_left"):

@@ -16,97 +16,78 @@ colors = PoolColorArray( 0.772549, 0.768627, 0.737255, 0.607843, 1, 1, 1, 0 )
 gradient = SubResource( 1 )
 
 [sub_resource type="AtlasTexture" id=22]
-flags = 4
 atlas = ExtResource( 5 )
 region = Rect2( 0, 0, 80, 100 )
 
 [sub_resource type="AtlasTexture" id=2]
-flags = 4
 atlas = ExtResource( 5 )
 region = Rect2( 80, 0, 80, 100 )
 
 [sub_resource type="AtlasTexture" id=3]
-flags = 4
 atlas = ExtResource( 5 )
 region = Rect2( 160, 0, 80, 100 )
 
 [sub_resource type="AtlasTexture" id=4]
-flags = 4
 atlas = ExtResource( 5 )
 region = Rect2( 240, 0, 80, 100 )
 
 [sub_resource type="AtlasTexture" id=5]
-flags = 4
 atlas = ExtResource( 5 )
 region = Rect2( 320, 0, 80, 100 )
 
 [sub_resource type="AtlasTexture" id=6]
-flags = 4
 atlas = ExtResource( 5 )
 region = Rect2( 400, 0, 80, 100 )
 
 [sub_resource type="AtlasTexture" id=7]
-flags = 4
 atlas = ExtResource( 5 )
 region = Rect2( 480, 0, 80, 100 )
 
 [sub_resource type="AtlasTexture" id=8]
-flags = 4
 atlas = ExtResource( 5 )
 region = Rect2( 560, 0, 80, 100 )
 
 [sub_resource type="AtlasTexture" id=9]
-flags = 4
 atlas = ExtResource( 5 )
 region = Rect2( 640, 0, 80, 100 )
 
 [sub_resource type="AtlasTexture" id=10]
-flags = 4
 atlas = ExtResource( 5 )
 region = Rect2( 720, 0, 80, 100 )
 
 [sub_resource type="AtlasTexture" id=11]
-flags = 4
 atlas = ExtResource( 5 )
 region = Rect2( 800, 0, 80, 100 )
 
 [sub_resource type="AtlasTexture" id=12]
-flags = 4
 atlas = ExtResource( 5 )
 region = Rect2( 880, 0, 80, 100 )
 
 [sub_resource type="AtlasTexture" id=13]
-flags = 4
 atlas = ExtResource( 5 )
 region = Rect2( 960, 0, 80, 100 )
 
 [sub_resource type="AtlasTexture" id=14]
-flags = 4
 atlas = ExtResource( 5 )
 region = Rect2( 1040, 0, 80, 100 )
 
 [sub_resource type="AtlasTexture" id=15]
-flags = 4
 atlas = ExtResource( 5 )
 region = Rect2( 1120, 0, 80, 100 )
 
 [sub_resource type="AtlasTexture" id=16]
-flags = 4
 atlas = ExtResource( 5 )
 region = Rect2( 1200, 0, 80, 100 )
 
 [sub_resource type="AtlasTexture" id=17]
-flags = 4
 atlas = ExtResource( 5 )
 region = Rect2( 1280, 0, 80, 100 )
 
 [sub_resource type="AtlasTexture" id=18]
-flags = 4
 atlas = ExtResource( 5 )
 region = Rect2( 1360, 0, 80, 100 )
 
 [sub_resource type="AtlasTexture" id=19]
-flags = 4
 atlas = ExtResource( 5 )
 region = Rect2( 1440, 0, 80, 100 )
 
@@ -189,7 +170,7 @@ margin_right = 562.0
 margin_bottom = 643.0
 text = "Control character: A, D
 
-Control elevator: W, A
+Control elevator: W, S
 
 Punch: Space (only with coffeecan or crate possible)"
 
@@ -213,7 +194,7 @@ The more colleagues are awake the more money you earn"
 position = Vector2( 258, 169 )
 scale = Vector2( 4.375, 4.375 )
 frames = SubResource( 20 )
-frame = 13
+frame = 6
 playing = true
 
 [node name="BackButton" type="Button" parent="."]
